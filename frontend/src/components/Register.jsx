@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const Register = () => {
     password: "",
     image: null,
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,20 +25,19 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //const apiUrl = "http://13.60.196.148:3000";
+    const apiUrl = "http://localhost:3000";
     const formDataObj = new FormData();
     formDataObj.append("email", formData.email);
     formDataObj.append("password", formData.password);
     formDataObj.append("image", formData.image);
 
     try {
-      const response = await axios.post(
-        "http://13.60.196.148/:3000/register",
-        formDataObj,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+      const response = await axios.post(`${apiUrl}/register`, formDataObj, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       toast.success("User registered successfully!");
+      navigate("/login");
     } catch (error) {
       const errorMessage =
         error.response?.data?.errors?.join(", ") ||

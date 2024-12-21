@@ -1,78 +1,168 @@
-.register-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-  }
-  
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-    color: #555;
-  }
-  
-  input {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #007bff;
-  }
-  
-  button {
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  div input[type="file"] {
-    padding: 0;
-  }
-  
-  div input[type="file"]::file-selector-button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  div input[type="file"]::file-selector-button:hover {
-    background-color: #0056b3;
-  }
-  
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Registration Container */
+.register-container, 
+.login-container, 
+.product-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Common Header Styles */
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+div input[type="file"] {
+  padding: 0;
+}
+
+div input[type="file"]::file-selector-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+div input[type="file"]::file-selector-button:hover {
+  background-color: #0056b3;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container button {
+  margin-top: 10px;
+}
+
+/* Product Page Styles */
+.product-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-container h2 {
+  color: #444;
+}
+
+.product-container .product-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-container .product-card h3 {
+  margin: 0;
+  color: #333;
+}
+
+.product-container .product-card p {
+  margin: 0;
+  color: #555;
+}
+
+.product-container .product-card .tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.product-container .product-card .tags span {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.product-container .product-card .reviews {
+  margin-top: 10px;
+}
+
+.product-container .product-card .reviews .review {
+  margin-bottom: 5px;
+  padding-left: 10px;
+  border-left: 2px solid #007bff;
+}
